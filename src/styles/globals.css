@@ -65,7 +65,9 @@
     @apply box-border m-0 p-0;
   }
 
-  html, body, #__next {
+  html,
+  body,
+  #__next {
     @apply h-full;
   }
 

@@ -1,0 +1,62 @@
+/* styles/Grid.module.css */
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-cols, 20), 1fr);
+  border: 2px solid #333;
+  width: fit-content;
+  margin-top: 20px;
+}
+
+.row {
+  display: contents;
+}
+
+.cell {
+  width: 25px;
+  height: 25px;
+  border: 1px solid #ddd;
+  transition: background-color 0.3s ease;
+}
+
+/* Tipos de Terreno */
+.cell-sand {
+  background-color: #f0e68c;
+}
+.cell-mud {
+  background-color: #8b4513;
+}
+.cell-water {
+  background-color: #1e90ff;
+}
+.cell-obstacle {
+  background-color: #555;
+}
+
+/* Estados da Busca */
+.visited {
+  background-color: rgba(173, 216, 230, 0.5);
+} /* Azul claro semi-transparente */
+.frontier {
+  background-color: rgba(255, 165, 0, 0.6);
+} /* Laranja semi-transparente */
+.path {
+  background-color: #ff00ff;
+} /* Magenta */
+
+/* Agente e Comida */
+.agent,
+.food {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.agent {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="red" stroke="black" stroke-width="5"/></svg>');
+  z-index: 10;
+}
+
+.food {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon points="50,5 95,95 5,95" fill="yellow" stroke="black" stroke-width="5"/></svg>');
+  z-index: 5;
+}
